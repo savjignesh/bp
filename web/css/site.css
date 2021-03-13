@@ -113,3 +113,20 @@ a.desc:after {
 .nav > li > form > button.logout:focus {
     outline: none;
 }
+
+span.bp_title {
+    color:#999; 
+}
+.property-view{
+    font-size: 1.2em;
+
+}
+td.space1 { 
+    padding: 15px;
+}
+td { 
+    padding: 3px;
+}
+.bp_titleh4{
+    color: #337ab7
+}

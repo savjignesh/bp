@@ -28,7 +28,11 @@ use yii\widgets\ActiveForm;
             <h2>Purchase & Loan Details</h2>
             <?= $form->field($model, 'purchase_price')->textInput() ?>
 
+            <?= $form->field($model, 'down_payment')->textInput() ?>
+
             <?= $form->field($model, 'purchase_closing_cost')->textInput() ?>
+
+            <?= $form->field($model, 'estimated_repair_cost')->textInput() ?>
 
             <?= $form->field($model, 'interest_rate')->textInput() ?>
 

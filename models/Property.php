@@ -13,7 +13,9 @@ use Yii;
  * @property string $state
  * @property int $zip
  * @property int $purchase_price
+ * @property float $down_payment
  * @property int $purchase_closing_cost
+ * @property int $estimated_repair_cost
  * @property float $interest_rate
  * @property float $points_charged
  * @property int $loan_term
@@ -47,9 +49,9 @@ class Property extends \yii\db\ActiveRecord
     public function rules()
     {
         return [
-            [['street_address', 'city', 'state', 'zip', 'purchase_price', 'purchase_closing_cost', 'interest_rate', 'loan_term', 'gross_monthly_income', 'property_taxes', 'insurance', 'repairs_maintenance', 'vacancy', 'capital_expenditures', 'electricity'], 'required'],
-            [['zip', 'purchase_price', 'purchase_closing_cost', 'loan_term', 'gross_monthly_income', 'property_taxes', 'insurance', 'repairs_maintenance', 'vacancy', 'capital_expenditures', 'management_fees', 'electricity', 'gas', 'water_sewer', 'hoa_fees', 'garbage', 'other'], 'integer'],
-            [['interest_rate', 'points_charged'], 'number'],
+            [['street_address', 'city', 'state', 'zip', 'purchase_price', 'down_payment', 'purchase_closing_cost', 'interest_rate', 'loan_term', 'gross_monthly_income', 'property_taxes', 'insurance', 'repairs_maintenance', 'vacancy', 'capital_expenditures', 'electricity'], 'required'],
+            [['zip', 'purchase_price', 'purchase_closing_cost', 'estimated_repair_cost', 'loan_term', 'gross_monthly_income', 'property_taxes', 'insurance', 'repairs_maintenance', 'vacancy', 'capital_expenditures', 'management_fees', 'electricity', 'gas', 'water_sewer', 'hoa_fees', 'garbage', 'other'], 'integer'],
+            [['down_payment', 'interest_rate', 'points_charged'], 'number'],
             [['street_address'], 'string', 'max' => 100],
             [['city', 'state'], 'string', 'max' => 11],
         ];
@@ -67,7 +69,9 @@ class Property extends \yii\db\ActiveRecord
             'state' => 'State',
             'zip' => 'Zip',
             'purchase_price' => 'Purchase Price',
+            'down_payment' => 'Down Payment',
             'purchase_closing_cost' => 'Purchase Closing Cost',
+            'estimated_repair_cost' => 'Estimated Repair Cost',
             'interest_rate' => 'Interest Rate',
             'points_charged' => 'Points Charged',
             'loan_term' => 'Loan Term',

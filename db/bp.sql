@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1:3306
--- Generation Time: Mar 09, 2021 at 11:26 PM
+-- Generation Time: Mar 13, 2021 at 01:11 AM
 -- Server version: 5.7.31
 -- PHP Version: 7.3.21
 
@@ -36,7 +36,9 @@ CREATE TABLE IF NOT EXISTS `property` (
   `state` varchar(11) NOT NULL,
   `zip` int(11) NOT NULL,
   `purchase_price` int(11) NOT NULL,
+  `down_payment` float NOT NULL,
   `purchase_closing_cost` int(11) NOT NULL,
+  `estimated_repair_cost` int(11) NOT NULL DEFAULT '0',
   `interest_rate` float NOT NULL,
   `points_charged` float NOT NULL DEFAULT '0',
   `loan_term` int(11) NOT NULL,
@@ -60,8 +62,8 @@ CREATE TABLE IF NOT EXISTS `property` (
 -- Dumping data for table `property`
 --
 
-INSERT INTO `property` (`id`, `street_address`, `city`, `state`, `zip`, `purchase_price`, `purchase_closing_cost`, `interest_rate`, `points_charged`, `loan_term`, `gross_monthly_income`, `property_taxes`, `insurance`, `repairs_maintenance`, `vacancy`, `capital_expenditures`, `management_fees`, `electricity`, `gas`, `water_sewer`, `hoa_fees`, `garbage`, `other`) VALUES
-(1, '5810 Shadow Gln', 'San Antonio', 'TX', 78240, 449000, 3500, 3.5, 0, 30, 3200, 753, 351, 5, 8, 10, 10, 0, 0, 0, 0, 0, 50);
+INSERT INTO `property` (`id`, `street_address`, `city`, `state`, `zip`, `purchase_price`, `down_payment`, `purchase_closing_cost`, `estimated_repair_cost`, `interest_rate`, `points_charged`, `loan_term`, `gross_monthly_income`, `property_taxes`, `insurance`, `repairs_maintenance`, `vacancy`, `capital_expenditures`, `management_fees`, `electricity`, `gas`, `water_sewer`, `hoa_fees`, `garbage`, `other`) VALUES
+(1, '5810 Shadow Gln', 'San Antonio', 'TX', 78240, 429000, 20, 3500, 0, 3.5, 0, 30, 4000, 753, 351, 5, 8, 10, 10, 0, 0, 0, 0, 0, 50);
 SET FOREIGN_KEY_CHECKS=1;
 COMMIT;
 
